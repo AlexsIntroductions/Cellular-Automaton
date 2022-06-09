@@ -1,0 +1,26 @@
+
+
+body{
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: whitesmoke;
+	margin: 2%;
+	padding: 3%;
+}
+
+.myButton{
+	font-family: Geneva, Verdana, sans-serif;
+	cursor: pointer;
+}
+
+#startCanvas{
+	border: 2px solid black;
+	background-color: white;
+}
+
+#myCanvas{
+	border: 2px solid black;
+	background-color: white;
+}
