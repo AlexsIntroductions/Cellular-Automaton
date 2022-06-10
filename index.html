@@ -4,10 +4,23 @@
 	<link rel="stylesheet" href="stylesheet.css">
 </head>
 	<body>
-		<div class="control-container">
-			<button type="button" class="myButton" onclick="reset()">Reset</button>
-			<button type="button" class="myButton" onclick="doRow()">Test</button>
-			<button type="button" class="myButton" onclick="step()">Animate</button>
+		<div style="width: 100%; display: flex; flex-direction: row; justify-content: space-evenly;">
+			<div class="control-container">
+				<button type="button" class="myButton" onclick="setFractal()">Fractal</button>
+				<button type="button" class="myButton" onclick="setElementary()">Elementary</button>
+				<button type="button" class="myButton" onclick="setRandom()">Random</button>
+			</div>
+			<div class="control-container">
+				<button type="button" class="myButton" onclick="reset()">Reset</button>
+				<button type="button" class="myButton" onclick="doRow()">Test</button>
+				<button type="button" class="myButton" onclick="step()">Animate</button>
+			</div>
+			<div class="control-container">
+				<button type="button" class="myButton" onclick="boardSmall()">Small</button>
+				<button type="button" class="myButton" onclick="boardMedium()">Medium</button>
+				<button type="button" class="myButton" onclick="boardLarge()">Large</button>
+				<button type="button" class="myButton" onclick="boardExtraLarge()">Extra-Large</button>
+			</div>
 		</div>
 		<canvas id="startCanvas" width="1000" height="40"></canvas>
 		<br>
