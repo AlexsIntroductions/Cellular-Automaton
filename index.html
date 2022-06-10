@@ -4,11 +4,14 @@
 	<link rel="stylesheet" href="stylesheet.css">
 </head>
 	<body>
-		<button type="button" class="myButton" onclick="reset()">Reset</button>
-		<button type="button" class="myButton" onclick="start()">Start</button>
+		<div class="control-container">
+			<button type="button" class="myButton" onclick="reset()">Reset</button>
+			<button type="button" class="myButton" onclick="doRow()">Test</button>
+			<button type="button" class="myButton" onclick="step()">Animate</button>
+		</div>
 		<canvas id="startCanvas" width="1000" height="40"></canvas>
 		<br>
-		<canvas id="myCanvas" width="1000" height="800"></canvas>
+		<canvas id="myCanvas" width="1000" height="600"></canvas>
 	</body>
 	<script src="script.js"></script>
 </html>
