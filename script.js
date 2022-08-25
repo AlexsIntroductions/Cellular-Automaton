@@ -6,6 +6,7 @@
 //Gets the canvas
 var mainCanvas = document.getElementById("myCanvas");
 var smallCanvas = document.getElementById("startCanvas");
+
 //instances 2d on it
 var sctx = smallCanvas.getContext("2d");
 var ctx = mainCanvas.getContext("2d");
@@ -22,6 +23,8 @@ let n = 20 * cellSize;
 let m = 40 * cellSize;
 let setting = 2;
 let rando = new Array(8);
+let requestID = null;
+
 /*
 let n = prompt("Enter number of Rows", "");
 while(isNaN(parseInt(n))){
@@ -66,6 +69,9 @@ Parents.prototype.evaluate = function(){
 			break;
 		case 3:
 			return this.evaluateRandom();
+			break;
+		case 4:
+			return this.evaluateRandomEveryRow();
 			break;
 		default:
 			console.log("BROKEN IN EVALUATE");
@@ -118,6 +124,29 @@ Parents.prototype.evaluateFractal = function(){
 }
 
 Parents.prototype.evaluateRandom = function(){
+	if(this.x == 0){
+		if(this.y == 0){
+			if(this.z == 0){ /*000*/ return rando[0]; }
+			else{ /*001*/ return rando[1]; }
+		}
+		else{
+			if(this.z == 0){ /*010*/ return rando[2]; }
+			else{ /*011*/ return rando[3]; }
+		}
+	}else{
+		if(this.y == 0){
+			if(this.z == 0){ /*100*/ return rando[4]; }
+			else{ /*101*/ return rando[5]; }
+		}
+		else{
+			if(this.z == 0){ /*110*/ return rando[6]; }
+			else{ /*111*/ return rando[7]; }
+		}
+	}
+}
+
+Parents.prototype.evaluateRandomEveryRow = function(){
+	initRandom();
 	if(this.x == 0){
 		if(this.y == 0){
 			if(this.z == 0){ /*000*/ return rando[0]; }
@@ -195,6 +224,8 @@ function drawBoard(){
     }
     sctx.strokeStyle = "black";
     sctx.stroke();
+
+	doReset = false;
 }
 
 function doRow(){
@@ -206,7 +237,8 @@ function doRow(){
 	let result = -1;
 	var ImageData;
 	if(i == 0){
-		start();
+		ctx.drawImage(smallCanvas, 0, 0);
+		i += cellSize;
 		return;
 	}
 	for(let j = 0; j < mainCanvas.width; j+=cellSize){
@@ -256,26 +288,27 @@ function initRandom(){
 	}
 }
 
-function start(){
-	ctx.drawImage(smallCanvas, 0, 0);
-	i += cellSize;
-}
-
 function reset(){
+	cancelAnimationFrame(requestID);
 	sctx.clearRect(0, 0, smallCanvas.width, smallCanvas.height);
 	ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
 	i = 0;
 	drawBoard();
 }
 
+function start(){
+	requestID = requestAnimationFrame(step);
+}
+
 function step() {
 	doRow();
 	setTimeout(2000);
 	if(i < mainCanvas.height){
-		window.requestAnimationFrame(step);
+		requestID = requestAnimationFrame(step);
 	}
 	else{
-		console.log("STOPPED");
+		console.log("STOPPED")
+		cancelAnimationFrame(requestID);
 	}
 }
 
@@ -323,7 +356,6 @@ function boardExtraLarge(){
 	reset();
 }
 
-
 function setFractal(){
 	setting = 1;
 }
@@ -335,6 +367,11 @@ function setElementary(){
 function setRandom(){
 	setting = 3;
 }
+
+function setRandomEveryRow(){
+	setting = 4;
+}
+
 //---------------MAIN PROGRAM---------------//
 
 drawBoard();

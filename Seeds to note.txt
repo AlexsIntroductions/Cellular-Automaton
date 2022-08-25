@@ -11,3 +11,11 @@
 10111001 - Staircase
 10110010 - Square?
 11000110 - Pyramid (one in center)
+11001001 - tetris pieces
+01011011
+11010010 - Stringy Pyramid
+01111111 - black Pyramid
+01101100 - Qbert Stage
+01111010 - Lines Pyramid
+11010111 - VOID
+10011100 - Isometric Pyramid
