@@ -11,11 +11,19 @@
 10111001 - Staircase
 10110010 - Square?
 11000110 - Pyramid (one in center)
-11001001 - tetris pieces
-01011011
-11010010 - Stringy Pyramid
-01111111 - black Pyramid
-01101100 - Qbert Stage
-01111010 - Lines Pyramid
-11010111 - VOID
-10011100 - Isometric Pyramid
+11000101 - Checker Triangle
+11101001 - Double Inverted Fractal?
+01101100 - QBert Stage
+10101101 - Fractal + Qbert + Weird Fractal
+10100101 - Similar to Above ^
+11100001 - Lines + inverse + inverse
+01101001 - double fractal
+10000001 - triple inverse fractal
+11000101 - triangles
+11101101 - double fractal
+11111111 - void
+10000011 - double sideways triangles
+11000110 - isometric pyramid
+10000111 - Super Weird Fractal ******
+01101111 - Striped Triangle
+01101011 - Spikey Striped Triangle
