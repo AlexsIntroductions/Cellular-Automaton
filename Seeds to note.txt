@@ -26,6 +26,7 @@
 11000110 - isometric pyramid
 10000111 - Super Weird Fractal ******
 01101111 - Striped Triangle
+<<<<<<< HEAD
 01101011 - Spikey Striped Triangle
 11001001 - tetris pieces
 01011011
@@ -37,3 +38,6 @@
 10011100 - Isometric Pyramid
 01011000 - OG fractal
 01001001 - OG fractal 2 electric boogaloo
+=======
+01101011 - Spikey Striped Triangle
+>>>>>>> 1cb58758d2772791413d1da5c9c6e1be53332254
