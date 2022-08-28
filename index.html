@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<link rel="stylesheet" href="stylesheet.css">
 </head>
-	<body>
+
+<body>
+	<main>
 		<div style="width: 100%; display: flex; flex-direction: row; justify-content: space-evenly;">
 			<div class="control-container">
 				<button type="button" class="myButton" onclick="setFractal()">Fractal</button>
 				<button type="button" class="myButton" onclick="setElementary()">Elementary</button>
 				<button type="button" class="myButton" onclick="setRandom()">Random</button>
-				<button type="button" class="myButton" onclick="setRandomEveryRow()">Random Every Row</button>
+				<button type="button" class="myButton" onclick="setRandomEveryRow()">Random Every Tile</button>
 			</div>
 			<div class="control-container">
 				<button type="button" class="myButton" onclick="reset()">Reset</button>
@@ -23,9 +26,11 @@
 				<button type="button" class="myButton" onclick="boardExtraLarge()">Extra-Large</button>
 			</div>
 		</div>
-		<canvas id="startCanvas" width="1000" height="40"></canvas>
+		<canvas id="startCanvas"></canvas>
 		<br>
-		<canvas id="myCanvas" width="1000" height="600"></canvas>
-	</body>
-	<script src="script.js"></script>
+		<canvas id="myCanvas"></canvas>
+	</main>
+</body>
+<script src="script.js"></script>
+
 </html>

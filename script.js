@@ -15,12 +15,12 @@ var ctx = mainCanvas.getContext("2d");
 var bw;
 var bh;
 var p;
-let cellSize = 40;
+let cellSize = 20;
 
 //initialize board tracking parameters;
 let i = 0;
-let n = 20 * cellSize;
-let m = 40 * cellSize;
+let n = 30 * cellSize;
+let m = 60 * cellSize;
 let setting = 2;
 let rando = new Array(8);
 let requestID = null;
@@ -44,6 +44,7 @@ m = Math.floor(m) * 40;
 mainCanvas.height = n;
 mainCanvas.width = m;
 smallCanvas.width = m;
+smallCanvas.height = cellSize;
 
 //---------------EVENT LISTENERS---------------//
 
@@ -314,8 +315,8 @@ function step() {
 
 function boardSmall(){
 	cellSize = 40;
-	n = 20 * cellSize;
-	m = 40 * cellSize;
+	n = 15 * cellSize;
+	m = 30 * cellSize;
 	mainCanvas.height = n;
 	mainCanvas.width = m;
 	smallCanvas.width = m;
@@ -325,8 +326,8 @@ function boardSmall(){
 
 function boardMedium(){
 	cellSize = 20;
-	n = 40 * cellSize;
-	m = 80 * cellSize;
+	n = 30 * cellSize;
+	m = 60 * cellSize;
 	mainCanvas.height = n;
 	mainCanvas.width = m;
 	smallCanvas.width = m;
@@ -336,8 +337,8 @@ function boardMedium(){
 
 function boardLarge(){
 	cellSize = 10;
-	n = 80 * cellSize;
-	m = 160 * cellSize;
+	n = 60 * cellSize;
+	m = 120 * cellSize;
 	mainCanvas.height = n;
 	mainCanvas.width = m;
 	smallCanvas.width = m;
@@ -347,8 +348,8 @@ function boardLarge(){
 
 function boardExtraLarge(){
 	cellSize = 5;
-	n = 160 * cellSize;
-	m = 320 * cellSize;
+	n = 120 * cellSize;
+	m = 240 * cellSize;
 	mainCanvas.height = n;
 	mainCanvas.width = m;
 	smallCanvas.width = m;
