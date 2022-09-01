@@ -313,7 +313,7 @@ function step() {
 	}
 }
 
-function boardSmall(){
+function boardSmall(e){
 	cellSize = 40;
 	n = 15 * cellSize;
 	m = 30 * cellSize;
@@ -322,9 +322,15 @@ function boardSmall(){
 	smallCanvas.width = m;
 	smallCanvas.height = cellSize;
 	reset();
+	
+	let elements = document.getElementsByName("size");
+	elements.forEach(
+		element => element.classList.remove("active")
+	);
+	e.classList.add('active');
 }
 
-function boardMedium(){
+function boardMedium(e){
 	cellSize = 20;
 	n = 30 * cellSize;
 	m = 60 * cellSize;
@@ -333,9 +339,15 @@ function boardMedium(){
 	smallCanvas.width = m;
 	smallCanvas.height = cellSize;
 	reset();
+	
+	let elements = document.getElementsByName("size");
+	elements.forEach(
+		element => element.classList.remove("active")
+	);
+	e.classList.add('active');
 }
 
-function boardLarge(){
+function boardLarge(e){
 	cellSize = 10;
 	n = 60 * cellSize;
 	m = 120 * cellSize;
@@ -344,9 +356,15 @@ function boardLarge(){
 	smallCanvas.width = m;
 	smallCanvas.height = cellSize;
 	reset();
+
+	let elements = document.getElementsByName("size");
+	elements.forEach(
+		element => element.classList.remove("active")
+	);
+	e.classList.add('active');
 }
 
-function boardExtraLarge(){
+function boardExtraLarge(e){
 	cellSize = 5;
 	n = 120 * cellSize;
 	m = 240 * cellSize;
@@ -355,22 +373,48 @@ function boardExtraLarge(){
 	smallCanvas.width = m;
 	smallCanvas.height = cellSize;
 	reset();
+	
+	let elements = document.getElementsByName("size");
+	elements.forEach(
+		element => element.classList.remove("active")
+	);
+	e.classList.add('active');
 }
 
-function setFractal(){
+function setFractal(e){
 	setting = 1;
+	let elements = document.getElementsByName("type");
+	elements.forEach(
+		element => element.classList.remove("active")
+	);
+	e.classList.add('active');
 }
 
-function setElementary(){
+function setElementary(e){
 	setting = 2;
+	let elements = document.getElementsByName("type");
+	elements.forEach(
+		element => element.classList.remove("active")
+	);
+	e.classList.add('active');
 }
 
-function setRandom(){
+function setRandom(e){
 	setting = 3;
+	let elements = document.getElementsByName("type");
+	elements.forEach(
+		element => element.classList.remove("active")
+	);
+	e.classList.add('active');
 }
 
-function setRandomEveryRow(){
+function setRandomEveryRow(e){
 	setting = 4;
+	let elements = document.getElementsByName("type");
+	elements.forEach(
+		element => element.classList.remove("active")
+	);
+	e.classList.add('active');
 }
 
 //---------------MAIN PROGRAM---------------//

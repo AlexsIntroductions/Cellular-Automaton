@@ -23,10 +23,11 @@ body{
 .control-container{
 	display:flex;
 	flex-direction: row;
+	width: fit-content;
 	padding-bottom: 2%;
 }
 
 .myButton{
-	font-family: Geneva, Verdana, sans-serif;
-	cursor: pointer;
+	white-space: nowrap;
+	margin-right: 1%;
 }

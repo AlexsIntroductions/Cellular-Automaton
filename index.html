@@ -3,7 +3,6 @@
 
 <head>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
 	<link rel="stylesheet" href="stylesheet.css">
 </head>
 
@@ -11,31 +10,42 @@
 	<div class="display-4 text-dark">
 		CELLULAR AUTOMATON
 	</div>
-	<div class="container-fluid"><hr style="border-top: 3px solid black"></div>
+	<div class="container-fluid">
+		<hr style="border-top: 3px solid black">
+		<div class="display-6">Instructions</div>
+		<p>
+			
+		</p>
+		<hr style="border-top: 3px solid black">
+	</div>
 	<main>
 		<div style="width: 100%; display: flex; flex-direction: row; justify-content: space-evenly;">
 			<div class="control-container">
-				<button type="button" class="myButton" onclick="setFractal()">Fractal</button>
-				<button type="button" class="myButton" onclick="setElementary()">Elementary</button>
-				<button type="button" class="myButton" onclick="setRandom()">Random</button>
-				<button type="button" class="myButton" onclick="setRandomEveryRow()">Random Every Tile</button>
+				<button type="button" name="type" class="btn btn-outline-dark myButton" onclick="setFractal(this)">Fractal</button>
+				<button type="button" name="type" class="btn btn-outline-dark active myButton" onclick="setElementary(this)">Elementary</button>
+				<button type="button" name="type" class="btn btn-outline-dark myButton" onclick="setRandom(this)">Random</button>
+				<button type="button" name="type" class="btn btn-outline-dark myButton" onclick="setRandomEveryRow(this)">Random Every Tile</button>
 			</div>
 			<div class="control-container">
-				<button type="button" class="myButton" onclick="reset()">Reset</button>
-				<button type="button" class="myButton" onclick="doRow()">Test</button>
-				<button type="button" class="myButton" onclick="start()">Animate</button>
+				<button type="button" class="btn btn-outline-danger myButton" onclick="reset()">Reset</button>
+				<button type="button" class="btn btn-outline-warning myButton" onclick="doRow()">Do One Row</button>
+				<button type="button" class="btn btn-outline-primary myButton" onclick="start()">Animate</button>
 			</div>
 			<div class="control-container">
-				<button type="button" class="myButton" onclick="boardSmall()">Small</button>
-				<button type="button" class="myButton" onclick="boardMedium()">Medium</button>
-				<button type="button" class="myButton" onclick="boardLarge()">Large</button>
-				<button type="button" class="myButton" onclick="boardExtraLarge()">Extra-Large</button>
+				<button type="button" name="size" class="btn btn-outline-dark myButton" onclick="boardSmall(this)">Small</button>
+				<button type="button" name="size" class="btn btn-outline-dark active myButton" onclick="boardMedium(this)">Medium</button>
+				<button type="button" name="size" class="btn btn-outline-dark myButton" onclick="boardLarge(this)">Large</button>
+				<button type="button" name="size" class="btn btn-outline-dark myButton" onclick="boardExtraLarge(this)">Extra-Large</button>
 			</div>
 		</div>
+		<p>Click on the Boxes to fill them</p>
 		<canvas id="startCanvas"></canvas>
 		<br>
+		<p>Main Canvas</p>
 		<canvas id="myCanvas"></canvas>
 	</main>
+	
+	<div class="container-fluid"><hr style="border-top: 3px solid black"></div>
 </body>
 <script src="script.js"></script>
 
