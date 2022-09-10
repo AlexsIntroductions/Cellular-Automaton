@@ -9,7 +9,6 @@
 10000010 - Knitting?
 10111001 - Staircase
 10110010 - Square?
-11000110 - Pyramid (one in center)
 11000101 - Checker Triangle
 11101001 - Double Inverted Fractal?
 01101100 - QBert Stage

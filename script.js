@@ -68,7 +68,7 @@ Parents.prototype.evaluate = function () {
 			return this.evaluateRandom();
 			break;
 		case 4:
-			return this.evaluateRandomEveryRow();
+			return this.evaluateSeed();
 			break;
 		default:
 			console.log("BROKEN IN EVALUATE");
@@ -144,8 +144,7 @@ Parents.prototype.evaluateRandom = function () {
 	}
 }
 
-Parents.prototype.evaluateRandomEveryRow = function () {
-	initRandom();
+Parents.prototype.evaluateSeed = function () {
 	if (this.x == 0) {
 		if (this.y == 0) {
 			if (this.z == 0) { /*000*/ return rando[0]; }
@@ -185,7 +184,9 @@ function onClick(smallCanvas, event) {
 }
 
 function drawBoard() {
-	initRandom();
+	if (setting == 3) {
+		initRandom();
+	}
 	//creating grid on main canvas
 	// Box width
 	bw = mainCanvas.width;
@@ -279,15 +280,16 @@ function doRow() {
 }
 
 function initRandom() {
+	if (setting != 3){
+		return;
+	}
 	for (let k = 0; k < 8; k++) {
 		rando[k] = Math.floor(Math.random() * 2);
 	}
 	for (let k = 0; k < 8; k++) {
 		console.log(rando[k]);
 	}
-	if (setting == 3) {
-		setGuide("neither");
-	}
+	setGuide("neither");
 }
 
 function reset() {
@@ -404,6 +406,7 @@ function setElementary(e) {
 
 function setRandom(e) {
 	setting = 3;
+	initRandom();
 	let elements = document.getElementsByName("type");
 	elements.forEach(
 		element => element.classList.remove("active")
@@ -412,13 +415,17 @@ function setRandom(e) {
 	setGuide("neither")
 }
 
-function setRandomEveryRow(e) {
+function setSeed(e) {
 	setting = 4;
+	for(let i = 0; i < 8; i++){
+		rando[i] = 0;
+	}
 	let elements = document.getElementsByName("type");
 	elements.forEach(
 		element => element.classList.remove("active")
 	);
 	e.classList.add('active');
+	setGuide("neither");
 }
 
 //---------------GUIDE FUNCTIONALITY---------------//
@@ -466,7 +473,7 @@ function inputSeed() {
 	for (let i = 0; i < 8; i++) {
 		rando[i] = formValue[i];
 	}
-	if (setting == 3) {
+	if (setting == 4) {
 		setGuide("neither");
 	}
 }
