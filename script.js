@@ -184,9 +184,6 @@ function onClick(smallCanvas, event) {
 }
 
 function drawBoard() {
-	if (setting == 3) {
-		initRandom();
-	}
 	//creating grid on main canvas
 	// Box width
 	bw = mainCanvas.width;
