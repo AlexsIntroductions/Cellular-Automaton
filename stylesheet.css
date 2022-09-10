@@ -1,5 +1,3 @@
-
-
 body{
 	display:flex;
 	flex-direction: column;
@@ -8,6 +6,10 @@ body{
 	background-color: whitesmoke;
 	margin: 2%;
 	padding: 3%;
+}
+
+label{
+	font-size: small;
 }
 
 #startCanvas{
@@ -23,6 +25,7 @@ body{
 .control-container{
 	display:flex;
 	flex-direction: row;
+	justify-content: space-evenly;
 	width: fit-content;
 	padding-bottom: 2%;
 }
@@ -30,4 +33,10 @@ body{
 .myButton{
 	white-space: nowrap;
 	margin-right: 1%;
+}
+
+.centerText{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

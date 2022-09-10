@@ -2,7 +2,8 @@
 <html>
 
 <head>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="stylesheet.css">
 </head>
 
@@ -10,42 +11,151 @@
 	<div class="display-4 text-dark">
 		CELLULAR AUTOMATON
 	</div>
-	<div class="container-fluid">
+	<div class="container-fluid col">
 		<hr style="border-top: 3px solid black">
-		<div class="display-6">Instructions</div>
+		<h3>Instructions</h3>
+		<h6>Grid Settings</h6>
 		<p>
-			
+			There are two sets of buttons that change different settings of the grid. On the right are four size
+			settings.
+			Pressing these will change the number of tiles in the grids and can allow for some patterns to be displayed
+			more vividly.
+			On the left there is another set of four buttons. These correspond to patterns that will appear when the
+			automaton is run.
+			For the most vivid results, try each one out at the Large or Extra-Large settings, but experiment with the
+			various settings and see what patterns you can find!
+		</p>
+		<h6>Setting a Pattern</h6>
+		<p>
+			The single row at the top serves as the input to the automaton. Within the grid, click within the tiles to
+			set each one individually.
+			These inputs will help to generate a pattern using the Automaton's internal rules, and will generate each
+			level based on the previous one, starting from the input pattern you create.
+		</p>
+		<h6>Starting the Automaton</h6>
+		<p>
+			Once you have set your settings and input your pattern, you can start the automaton. There are two buttons
+			to do this: Do One Row and Animate.
+			Pressing the Do One Row button will allow you to go one row at a time whenever the button is pressed. The
+			first row will always be a copy of the pattern you set,
+			so press it multiple times to see the results of your input. You can also press the animate button, this
+			will automatically go row by row until it reaches the bottom of the canvas.
+			This allows you to watch your pattern grow from your input.
+		</p>
+		<h6>Setting a Seed</h6>
+		<p>
+			The text box in the section below allows you to input your own rules into the automata. To set a seed, enter an 8 bit binary number, meaning a number with 8 digits
+			that are all either 1 or 0. An example would be: 01001100. 
 		</p>
 		<hr style="border-top: 3px solid black">
 	</div>
 	<main>
-		<div style="width: 100%; display: flex; flex-direction: row; justify-content: space-evenly;">
-			<div class="control-container">
-				<button type="button" name="type" class="btn btn-outline-dark myButton" onclick="setFractal(this)">Fractal</button>
-				<button type="button" name="type" class="btn btn-outline-dark active myButton" onclick="setElementary(this)">Elementary</button>
-				<button type="button" name="type" class="btn btn-outline-dark myButton" onclick="setRandom(this)">Random</button>
-				<button type="button" name="type" class="btn btn-outline-dark myButton" onclick="setRandomEveryRow(this)">Random Every Tile</button>
-			</div>
-			<div class="control-container">
-				<button type="button" class="btn btn-outline-danger myButton" onclick="reset()">Reset</button>
-				<button type="button" class="btn btn-outline-warning myButton" onclick="doRow()">Do One Row</button>
-				<button type="button" class="btn btn-outline-primary myButton" onclick="start()">Animate</button>
-			</div>
-			<div class="control-container">
-				<button type="button" name="size" class="btn btn-outline-dark myButton" onclick="boardSmall(this)">Small</button>
-				<button type="button" name="size" class="btn btn-outline-dark active myButton" onclick="boardMedium(this)">Medium</button>
-				<button type="button" name="size" class="btn btn-outline-dark myButton" onclick="boardLarge(this)">Large</button>
-				<button type="button" name="size" class="btn btn-outline-dark myButton" onclick="boardExtraLarge(this)">Extra-Large</button>
+		<div class="centerText" style="justify-content: space-evenly;">
+			<span class="display-4">Current State</span>
+			<div class="form-group row">
+				<label for="inputSeed">Enter a Seed:</label>
+				<input type="number" class="form-control" id="inputSeed" 
+				placeholder="Input an 8 Digit Seed" style="border: 2px solid black;">
+				<button type="submit" onClick="inputSeed()" value="Submit">Submit</button>
 			</div>
 		</div>
-		<p>Click on the Boxes to fill them</p>
+		<div class="container-fluid" style="text-align: center; padding-bottom: 2%;">
+			The figures below represent the current rules of the automaton. The three squares on top represent the input to the calculations and the one below
+			represents the resulting output when that row is run, where a black square represents 1 and a white square represents 0.
+		</div>
+		<div class="container-fluid row">
+			<!--000-->
+			<div class="container-fluid col">
+				<div class="container-fluid centerText">&#11036&#11036&#11036</div>
+				<div name="guide" class="container-fluid centerText">1</div>
+			</div>
+			<!--001-->
+			<div class="container-fluid col">
+				<div class="container-fluid centerText">&#11036&#11036&#11035</div>
+				<div name="guide" class="container-fluid centerText">1</div>
+			</div>
+			<!--010-->
+			<div class="container-fluid col">
+				<div class="container-fluid centerText">&#11036&#11035&#11036</div>
+				<div name="guide" class="container-fluid centerText">1</div>
+			</div>
+			<!--011-->
+			<div class="container-fluid col">
+				<div class="container-fluid centerText">&#11036&#11035&#11035</div>
+				<div name="guide" class="container-fluid centerText">1</div>
+			</div>
+			<!--100-->
+			<div class="container-fluid col">
+				<div class="container-fluid centerText">&#11035&#11036&#11036</div>
+				<div name="guide" class="container-fluid centerText">1</div>
+			</div>
+			<!--101-->
+			<div class="container-fluid col">
+				<div class="container-fluid centerText">&#11035&#11036&#11035</div>
+				<div name="guide" class="container-fluid centerText">1</div>
+			</div>
+			<!--110-->
+			<div class="container-fluid col">
+				<div class="container-fluid centerText">&#11035&#11035&#11036</div>
+				<div name="guide" class="container-fluid centerText">1</div>
+			</div>
+			<!--111-->
+			<div class="container-fluid col">
+				<div class="container-fluid centerText">&#11035&#11035&#11035</div>
+				<div name="guide" class="container-fluid centerText">1</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<hr style="border-top: 3px solid black">
+		</div>
+		<div class="d-flex justify-content-center" style="width: 100%;">
+			<div class="container-fluid col">
+				<div class="control-container">
+					<button type="button" name="type" class="btn btn-outline-dark myButton"
+						onclick="setFractal(this)">Fractal</button>
+					<button type="button" name="type" class="btn btn-outline-dark active myButton"
+						onclick="setElementary(this)">Elementary</button>
+					<button type="button" name="type" class="btn btn-outline-dark myButton"
+						onclick="setRandom(this)">Random</button>
+					<button type="button" name="type" class="btn btn-outline-dark myButton"
+						onclick="setRandomEveryRow(this)">Random Every Tile</button>
+				</div>
+			</div>
+			<div class="container-fluid col">
+				<div class="control-container">
+					<button type="button" class="btn btn-outline-danger myButton" onclick="reset()">Reset</button>
+					<button type="button" class="btn btn-outline-primary myButton" onclick="doRow()">Do One Row</button>
+					<button type="button" class="btn btn-outline-success myButton" onclick="start()">Animate</button>
+				</div>
+			</div>
+			<div class="container-fluid col">
+				<div class="control-container">
+					<button type="button" name="size" class="btn btn-outline-dark myButton"
+						onclick="boardSmall(this)">Small</button>
+					<button type="button" name="size" class="btn btn-outline-dark active myButton"
+						onclick="boardMedium(this)">Medium</button>
+					<button type="button" name="size" class="btn btn-outline-dark myButton"
+						onclick="boardLarge(this)">Large</button>
+					<button type="button" name="size" class="btn btn-outline-dark myButton"
+						onclick="boardExtraLarge(this)">Extra-Large</button>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<hr style="border-top: 3px solid black">
+		</div>
+		<p>Click on the Tiles to Set Their State</p>
 		<canvas id="startCanvas"></canvas>
 		<br>
 		<p>Main Canvas</p>
 		<canvas id="myCanvas"></canvas>
 	</main>
-	
-	<div class="container-fluid"><hr style="border-top: 3px solid black"></div>
+
+	<div class="container-fluid">
+		<hr style="border-top: 3px solid black">
+	</div>
+
+
 </body>
 <script src="script.js"></script>
 

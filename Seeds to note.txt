@@ -1,7 +1,6 @@
 01100110 - sideways fractal
 00111110 - sideways fractal the other way
 01111101 - 
-10000001 - inverse fractal
 01001100 - checkerboard
 00100000 - line down
 01111001 - weird checkerboard
@@ -37,4 +36,7 @@
 10011100 - Isometric Pyramid
 01011000 - OG fractal
 01001001 - OG fractal 2 electric boogaloo
+10110100 - Funny Looking Triangle Thing
 01101011 - Spikey Striped Triangle
+11100101 - Triple Triangle / Fractal
+10110110 - Tables?
