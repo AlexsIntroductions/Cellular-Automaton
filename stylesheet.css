@@ -25,9 +25,8 @@ label{
 .control-container{
 	display:flex;
 	flex-direction: row;
-	justify-content: space-evenly;
+	justify-content: center;
 	width: fit-content;
-	padding-bottom: 2%;
 }
 
 .myButton{
@@ -39,4 +38,16 @@ label{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.canvas-container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.canvas-container-label{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 }
