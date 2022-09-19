@@ -179,8 +179,6 @@ function onClick(smallCanvas, event) {
 	sctx.beginPath();
 	sctx.rect(x * cellSize + 0.5, y * cellSize + 0.5, cellSize, cellSize);
 	sctx.fill();
-
-	console.log(x + ", " + y);
 }
 
 function drawBoard() {
